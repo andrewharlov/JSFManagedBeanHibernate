@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+   	xmlns:f = "http://java.sun.com/jsf/core"
+   	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+        <title>Search Results: Users</title>
+    </h:head>
+
+	<h:body>
+		<h:form>
+			<p:dataTable var="user" value="#{dBRequestHandler.users}" tableStyle="width: auto;" rowIndexVar="index"> <!-- scrollHeight="700" scrollable="true" tableStyle="table-layout: auto;" -->
+					<p:column>
+        				<f:facet name="header">
+            				<h:outputText value="#" />
+        				</f:facet>
+       					<h:outputText value="#{index + 1}" />
+    				</p:column>
+					<p:column> 
+	               		<f:facet name="header">ID</f:facet>
+	                        #{user.id}
+	                </p:column>					
+	                <p:column>
+	                    <f:facet name="header">Name</f:facet>
+	                        #{user.name}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">Password</f:facet>               
+	                        #{user.password}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">Email</f:facet>               
+	                        #{user.email}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">Country</f:facet>               
+	                        #{user.country}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">Full Name</f:facet>               
+	                        #{user.fullName}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">Main Assignee Group Id</f:facet>               
+	                        #{user.mainAssigneeGroupId}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">Company</f:facet>               
+	                        #{user.company}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">Locked</f:facet>               
+	                        #{user.locked}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">Role Id</f:facet>               
+	                        #{user.role.id}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">Role Name</f:facet>               
+	                        #{user.role.roleName}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">Role Description</f:facet>               
+	                        #{user.role.description}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">Timezone Id</f:facet>               
+	                        #{user.timeZone.id}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">UTC Offset</f:facet>               
+	                        #{user.timeZone.utcOffset}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">UTC DST Offset</f:facet>               
+	                        #{user.timeZone.utcDstOffset}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">Timezone Name</f:facet>               
+	                        #{user.timeZone.name}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">User Config ID</f:facet>               
+	                        #{user.userConfig.id}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">User Config Name</f:facet>               
+	                        #{user.userConfig.name}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">Filter Cockpit Enabled</f:facet>               
+	                        #{user.userConfig.filterCockpitEnabled}
+	                </p:column>
+	                <p:column>
+	                    <f:facet name="header">Group Cockpit Enabled</f:facet>               
+	                        #{user.userConfig.groupCockpitEnabled}
+	                </p:column>
+	     	</p:dataTable>
+	   	</h:form>
+	</h:body>
+</html>
